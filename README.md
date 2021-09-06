@@ -1,2 +1,2 @@
 # OAuthPractice
-GitHubのOAuth2.0に仕様を通してOAuth認可への理解を深めるためのリポジトリ
+GitHubのOAuth2.0の仕様を通してOAuth認可への理解を深めるためのリポジトリ
