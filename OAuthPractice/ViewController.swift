@@ -16,6 +16,9 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         setUpWKWebView()
         loadWkWebView()
+        wkWebView.uiDelegate = self
+        wkWebView.navigationDelegate = self
+
     }
 
     private func loadWkWebView() {
@@ -29,4 +32,25 @@ final class ViewController: UIViewController {
         wkWebView = WKWebView(frame: view.frame, configuration: configuration)
         view.addSubview(wkWebView)
     }
+
+    private func getAccessCode(url: String, param: String) -> String? {
+        let url = URLComponents(string: url)
+        print("queryItems",url?.queryItems ?? "")
+        // "code"と一致した場合値を返す
+        return url?.queryItems?.first {$0.name == param}?.value
+    }
+}
+
+extension ViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+        // code取得
+        let code = getAccessCode(url: navigationAction.request.url?.absoluteString ?? "", param: "code")
+        print("認可コード",code ?? "認可コードが取得できませんでした")
+    }
+}
+
+extension ViewController: WKUIDelegate {
+
 }
