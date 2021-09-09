@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38D8C23858B0C1033FF83EDF /* Pods_OAuthPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05119F295EB133612F5E75F /* Pods_OAuthPractice.framework */; };
 		F1CACAB726DB32BB00160E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CACAB626DB32BB00160E45 /* AppDelegate.swift */; };
 		F1CACAB926DB32BB00160E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CACAB826DB32BB00160E45 /* SceneDelegate.swift */; };
 		F1CACABB26DB32BB00160E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CACABA26DB32BB00160E45 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08C0D41C937B09B9A63A7EED /* Pods-OAuthPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuthPractice.release.xcconfig"; path = "Target Support Files/Pods-OAuthPractice/Pods-OAuthPractice.release.xcconfig"; sourceTree = "<group>"; };
+		2A3AAD13ADFC2A50FC06D2BE /* Pods-OAuthPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuthPractice.debug.xcconfig"; path = "Target Support Files/Pods-OAuthPractice/Pods-OAuthPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		C05119F295EB133612F5E75F /* Pods_OAuthPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OAuthPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CACAB326DB32BB00160E45 /* OAuthPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OAuthPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CACAB626DB32BB00160E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1CACAB826DB32BB00160E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D8C23858B0C1033FF83EDF /* Pods_OAuthPractice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B22B9356241869FE88665C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A3AAD13ADFC2A50FC06D2BE /* Pods-OAuthPractice.debug.xcconfig */,
+				08C0D41C937B09B9A63A7EED /* Pods-OAuthPractice.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9292439CC130B264B6D01A45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C05119F295EB133612F5E75F /* Pods_OAuthPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F1CACAAA26DB32BB00160E45 = {
 			isa = PBXGroup;
 			children = (
 				F1CACAB526DB32BB00160E45 /* OAuthPractice */,
 				F1CACAB426DB32BB00160E45 /* Products */,
+				6B22B9356241869FE88665C7 /* Pods */,
+				9292439CC130B264B6D01A45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1CACAC726DB32BC00160E45 /* Build configuration list for PBXNativeTarget "OAuthPractice" */;
 			buildPhases = (
+				0B8F4AEAF4D28D7E9A314802 /* [CP] Check Pods Manifest.lock */,
 				F1CACAAF26DB32BB00160E45 /* Sources */,
 				F1CACAB026DB32BB00160E45 /* Frameworks */,
 				F1CACAB126DB32BB00160E45 /* Resources */,
+				B339E60E179EC89E5EBA8E7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B8F4AEAF4D28D7E9A314802 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OAuthPractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B339E60E179EC89E5EBA8E7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OAuthPractice/Pods-OAuthPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OAuthPractice/Pods-OAuthPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OAuthPractice/Pods-OAuthPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1CACAAF26DB32BB00160E45 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		F1CACAC826DB32BC00160E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A3AAD13ADFC2A50FC06D2BE /* Pods-OAuthPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +371,7 @@
 		};
 		F1CACAC926DB32BC00160E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08C0D41C937B09B9A63A7EED /* Pods-OAuthPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -18,7 +18,6 @@ final class ViewController: UIViewController {
         loadWkWebView()
         wkWebView.uiDelegate = self
         wkWebView.navigationDelegate = self
-
     }
 
     private func loadWkWebView() {
